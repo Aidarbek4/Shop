@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    tools:context=".ui.home.HomeFragment">
+    <TextView
+        android:id="@+id/signInSignOut"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:text="Registration/ \nSign in"
+        android:textAlignment="center"
+        android:textDirection="inherit"
+        android:textSize="16sp"
+        android:textColor="@color/teal_200"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewIdentify"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="152dp"
+        android:background="@android:color/transparent"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textDirection="inherit"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/basket_btn"
+        app:layout_constraintStart_toStartOf="@+id/signInSignOut"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/basket_btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/cart"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="260dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_catalog_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basket_btn"
+        app:spanCount="2"
+        tools:listitem="@layout/item_product" />
+</androidx.constraintlayout.widget.ConstraintLayout>
